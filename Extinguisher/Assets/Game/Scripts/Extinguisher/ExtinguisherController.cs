@@ -3,6 +3,7 @@ using UnityEngine;
 public class ExtinguisherController : MonoBehaviour
 {
     [Header("References")]
+    [SerializeField] private LineRenderer hoseLineRenderer;
     [SerializeField] private ExtinguisherNozzle extinguisherNozzle;
     [SerializeField] private ExtinguisherLever extinguisherLever;
 
@@ -13,6 +14,16 @@ public class ExtinguisherController : MonoBehaviour
     private void Awake()
     {
         SetCurrentState(ExtinguisherState.Locked);
+    }
+
+    private void Update()
+    {
+        UpdateHose();
+    }
+
+    private void UpdateHose()
+    {
+        hoseLineRenderer.SetPosition(1, extinguisherNozzle.HoseEndPosition);
     }
 
     private void SetCurrentState(ExtinguisherState _currentState)

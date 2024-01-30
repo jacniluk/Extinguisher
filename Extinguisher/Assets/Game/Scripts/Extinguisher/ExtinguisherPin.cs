@@ -21,6 +21,7 @@ public class ExtinguisherPin : ExtinguisherElement, IClickable
 
         yield return new WaitForSeconds(actionAnimation.length);
 
+        transform.SetParent(null);
         animator.enabled = false;
         rb.useGravity = true;
 

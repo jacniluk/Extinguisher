@@ -3,7 +3,6 @@ using UnityEngine;
 public class ExtinguisherController : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private ExtinguisherPin extinguisherPin;
     [SerializeField] private ExtinguisherNozzle extinguisherNozzle;
     [SerializeField] private ExtinguisherLever extinguisherLever;
 
@@ -29,15 +28,13 @@ public class ExtinguisherController : MonoBehaviour
         {
             SetCurrentState(ExtinguisherState.Unlocked);
 
-            extinguisherPin.InteractionCollider.enabled = false;
-            extinguisherNozzle.InteractionCollider.enabled = true;
+            extinguisherNozzle.InteractionTrigger.enabled = true;
         }
         else if (currentState == ExtinguisherState.Unlocked)
         {
             SetCurrentState(ExtinguisherState.Ready);
 
-            extinguisherNozzle.InteractionCollider.enabled = false;
-            extinguisherLever.InteractionCollider.enabled = true;
+            extinguisherLever.InteractionTrigger.enabled = true;
         }
     }
 }

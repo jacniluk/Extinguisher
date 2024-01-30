@@ -208,7 +208,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0748033f6142d3c44927e3ae9301cd9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  extinguisherPin: {fileID: 343433438}
   extinguisherNozzle: {fileID: 343433440}
   extinguisherLever: {fileID: 143276784}
 --- !u!1 &275512927
@@ -508,6 +507,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7982904659924510068, guid: 7865c4de928c9554fa2a4c85cd258535, type: 3}
       insertIndex: -1
       addedObject: {fileID: 343433442}
+    - targetCorrespondingSourceObject: {fileID: 7982904659924510068, guid: 7865c4de928c9554fa2a4c85cd258535, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 343433443}
     - targetCorrespondingSourceObject: {fileID: 654308985932116067, guid: 7865c4de928c9554fa2a4c85cd258535, type: 3}
       insertIndex: -1
       addedObject: {fileID: 143276784}
@@ -561,6 +563,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionTrigger: {fileID: 343433442}
   extinguisherController: {fileID: 223501518}
+  animator: {fileID: 343433443}
+  actionAnimation: {fileID: 7400000, guid: 0a8dadb13768b8540917e2b2436aca65, type: 2}
 --- !u!135 &343433441
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -603,6 +607,27 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.015
   m_Center: {x: 0.02, y: 0, z: 0.02}
+--- !u!95 &343433443
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343433439}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e905d29c97c932c4ca318b0e3be44183, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!54 &343433447
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -65,4 +65,9 @@ public class FireController : MonoBehaviour
     {
         isBeingExtinguished = false;
     }
+
+    public float GetCurrentFirePower01()
+    {
+        return currentFirePower / firePower;
+    }
 }

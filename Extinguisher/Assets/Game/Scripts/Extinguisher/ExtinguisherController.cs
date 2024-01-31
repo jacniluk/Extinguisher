@@ -139,4 +139,9 @@ public class ExtinguisherController : MonoBehaviour
     {
         transform.position = new Vector3(transform.position.x, Utilities.Evaluate(height01, minHeight, maxHeight), transform.position.z);
     }
+
+    public float GetCurrentDischargeTime01()
+    {
+        return currentDischargeTime / dischargeTime;
+    }
 }

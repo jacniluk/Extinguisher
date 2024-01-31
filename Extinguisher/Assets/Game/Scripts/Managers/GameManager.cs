@@ -4,8 +4,12 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private void Awake()
+    public static GameManager Instance;
+
+	private void Awake()
     {
+        Instance = this;
+
         Application.targetFrameRate = 60;
     }
 

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class ExtinguisherController : MonoBehaviour
@@ -6,6 +7,9 @@ public class ExtinguisherController : MonoBehaviour
     [SerializeField] private int hosePoints;
     [SerializeField] private AnimationCurve hoseCurve;
 
+    [Header("Data")]
+    [SerializeField] private float dischargeTime;
+
     [Header("References")]
     [SerializeField] private LineRenderer hoseLineRenderer;
     [SerializeField] private ExtinguisherNozzle extinguisherNozzle;
@@ -13,13 +17,17 @@ public class ExtinguisherController : MonoBehaviour
     [SerializeField] private Transform hoseStart;
 
     private ExtinguisherState currentState;
+    private IEnumerator extinguishCoroutine;
+    private float currentDischargeTime;
 
     public ExtinguisherState CurrentState => currentState;
+    public float CurrentDischargeTime => currentDischargeTime;
 
     private void Awake()
     {
         hoseLineRenderer.positionCount = hosePoints;
         SetCurrentState(ExtinguisherState.Locked);
+        currentDischargeTime = dischargeTime;
     }
 
     private void Update()
@@ -68,6 +76,52 @@ public class ExtinguisherController : MonoBehaviour
             SetCurrentState(ExtinguisherState.Ready);
 
             extinguisherLever.InteractionTrigger.enabled = true;
+        }
+    }
+
+    public void StartExtinguish()
+    {
+        if (currentDischargeTime > 0.0f)
+        {
+            extinguishCoroutine = ExtinguishCoroutine();
+            StartCoroutine(extinguishCoroutine);
+        }
+    }
+
+    private IEnumerator ExtinguishCoroutine()
+    {
+        // 2do start proszek
+
+        float time = Time.timeSinceLevelLoad;
+        while (currentDischargeTime > 0.0f)
+        {
+            yield return null;
+
+            currentDischargeTime -= Time.timeSinceLevelLoad - time;
+            time = Time.timeSinceLevelLoad;
+            if (currentDischargeTime < 0.0f)
+            {
+                currentDischargeTime = 0.0f;
+            }
+        }
+
+        FinishExtinguish();
+    }
+
+    private void FinishExtinguish()
+    {
+        // 2do stop proszek
+
+        extinguishCoroutine = null;
+    }
+
+    public void StopExtinguish()
+    {
+        if (extinguishCoroutine != null)
+        {
+            StopCoroutine(extinguishCoroutine);
+
+            FinishExtinguish();
         }
     }
 }

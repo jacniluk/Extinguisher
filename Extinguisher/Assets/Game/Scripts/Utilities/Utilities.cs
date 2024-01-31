@@ -28,11 +28,11 @@ public class Utilities : MonoBehaviour
         return progress;
     }
 
-    private static float Evaluate(float progress, float resultMin, float resultMax)
+    public static float Evaluate(float progress01, float resultMin, float resultMax)
     {
         float result = resultMin;
         float gain = resultMax - resultMin;
-        float profit = progress * gain;
+        float profit = progress01 * gain;
         result += profit;
 
         return result;

@@ -6,6 +6,7 @@ public class ExtinguisherController : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private int hosePoints;
     [SerializeField] private AnimationCurve hoseCurve;
+    [SerializeField] private float maxHeight;
 
     [Header("Data")]
     [SerializeField] private float dischargeTime;
@@ -20,6 +21,7 @@ public class ExtinguisherController : MonoBehaviour
     private ExtinguisherState currentState;
     private IEnumerator extinguishCoroutine;
     private float currentDischargeTime;
+    private float minHeight;
 
     public ExtinguisherState CurrentState => currentState;
     public float CurrentDischargeTime => currentDischargeTime;
@@ -29,6 +31,7 @@ public class ExtinguisherController : MonoBehaviour
         hoseLineRenderer.positionCount = hosePoints;
         SetCurrentState(ExtinguisherState.Locked);
         currentDischargeTime = dischargeTime;
+        minHeight = transform.position.y;
     }
 
     private void Update()
@@ -130,5 +133,10 @@ public class ExtinguisherController : MonoBehaviour
 
             FinishExtinguish();
         }
+    }
+
+    public void SetHeight(float height01)
+    {
+        transform.position = new Vector3(transform.position.x, Utilities.Evaluate(height01, minHeight, maxHeight), transform.position.z);
     }
 }

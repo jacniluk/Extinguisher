@@ -7,8 +7,10 @@ public class ExtinguisherNozzle : ExtinguisherElement, IClickable
     [SerializeField] private Animator animator;
     [SerializeField] private AnimationClip actionAnimation;
     [SerializeField] private Transform hoseEnd;
+    [SerializeField] private Transform extinguishingPowderSocket;
 
     public Vector3 HoseEndPosition => hoseEnd.position;
+    public Transform ExtinguishingPowderSocket => extinguishingPowderSocket;
 
     public void OnClickDown() // IClickable
     {

@@ -15,6 +15,7 @@ public class ExtinguisherController : MonoBehaviour
     [SerializeField] private ExtinguisherNozzle extinguisherNozzle;
     [SerializeField] private ExtinguisherLever extinguisherLever;
     [SerializeField] private Transform hoseStart;
+    [SerializeField] private ExtinguishingPowderController extinguishingPowderController;
 
     private ExtinguisherState currentState;
     private IEnumerator extinguishCoroutine;
@@ -33,6 +34,7 @@ public class ExtinguisherController : MonoBehaviour
     private void Update()
     {
         UpdateHose();
+        UpdateExtinguishingPowderPosition();
     }
 
     private void UpdateHose()
@@ -54,6 +56,11 @@ public class ExtinguisherController : MonoBehaviour
             hoseLineRenderer.SetPosition(i, position);
         }
         hoseLineRenderer.SetPosition(hosePoints - 1, endPoint);
+    }
+
+    private void UpdateExtinguishingPowderPosition()
+    {
+        extinguishingPowderController.UpdatePosition(extinguisherNozzle.ExtinguishingPowderSocket);
     }
 
     private void SetCurrentState(ExtinguisherState _currentState)
@@ -90,7 +97,7 @@ public class ExtinguisherController : MonoBehaviour
 
     private IEnumerator ExtinguishCoroutine()
     {
-        // 2do start proszek
+        extinguishingPowderController.StartExtinguish();
 
         float time = Time.timeSinceLevelLoad;
         while (currentDischargeTime > 0.0f)
@@ -110,7 +117,7 @@ public class ExtinguisherController : MonoBehaviour
 
     private void FinishExtinguish()
     {
-        // 2do stop proszek
+        extinguishingPowderController.StopExtinguish();
 
         extinguishCoroutine = null;
     }

@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class FireController : MonoBehaviour
 {
+    [Header("Settings")]
+    [SerializeField] private float increaseRatio;
+
     [Header("Data")]
     [SerializeField] private float firePower;
 
@@ -37,7 +40,7 @@ public class FireController : MonoBehaviour
         }
         else if (currentFirePower < firePower)
         {
-            currentFirePower += Time.deltaTime;
+            currentFirePower += Time.deltaTime * increaseRatio;
             if (currentFirePower > firePower)
             {
                 currentFirePower = firePower;

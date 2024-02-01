@@ -19,6 +19,8 @@ public class ExtinguisherPin : ExtinguisherElement, IClickable
 
         animator.SetTrigger("Action");
 
+        AudioManager.Instance.PlayPin();
+
         yield return new WaitForSeconds(actionAnimation.length);
 
         transform.SetParent(null);

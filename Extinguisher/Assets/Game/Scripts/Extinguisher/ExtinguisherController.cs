@@ -102,6 +102,8 @@ public class ExtinguisherController : MonoBehaviour
     {
         extinguishingPowderController.StartExtinguish();
 
+        AudioManager.Instance.StartExtinguish();
+
         float time = Time.timeSinceLevelLoad;
         while (currentDischargeTime > 0.0f)
         {
@@ -117,7 +119,7 @@ public class ExtinguisherController : MonoBehaviour
 
         if (GameManager.Instance.GameCompleted == false)
         {
-            HudManager.Instance.SetHint(HintsManager.Instance.GetHintNoPowder());
+            GameManager.Instance.GameOver();
         }
 
         FinishExtinguish();
@@ -128,6 +130,8 @@ public class ExtinguisherController : MonoBehaviour
         extinguishingPowderController.StopExtinguish();
 
         extinguishCoroutine = null;
+
+        AudioManager.Instance.StopExtinguish();
     }
 
     public void StopExtinguish()

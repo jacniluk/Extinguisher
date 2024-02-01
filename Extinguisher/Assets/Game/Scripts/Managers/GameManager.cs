@@ -17,9 +17,21 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 60;
     }
 
-    public void SetGameCompleted()
+    public void GameComplete()
     {
         gameCompleted = true;
+
+        HudManager.Instance.SetHint(HintsManager.Instance.GetHintGameComplete());
+
+        AudioManager.Instance.StopFire();
+        AudioManager.Instance.PlayGameComplete();
+    }
+
+    public void GameOver()
+    {
+        HudManager.Instance.SetHint(HintsManager.Instance.GetHintGameOver());
+
+        AudioManager.Instance.PlayGameOver();
     }
 
     public void RestartGame()

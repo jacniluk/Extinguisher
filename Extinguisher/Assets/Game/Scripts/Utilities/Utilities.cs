@@ -10,15 +10,7 @@ public class Utilities : MonoBehaviour
     #endregion
 
     #region Progress
-    public static float Evaluate(float value, float rangeMin, float rangeMax, float resultMin, float resultMax)
-    {
-        float progress = CalculateProgress01(value, rangeMin, rangeMax);
-        float result = Evaluate(progress, resultMin, resultMax);
-
-        return result;
-    }
-
-    private static float CalculateProgress01(float value, float min, float max)
+    public static float CalculateProgress01(float value, float min, float max)
     {
         float achieved = value - min;
         float toAchieve = max - min;

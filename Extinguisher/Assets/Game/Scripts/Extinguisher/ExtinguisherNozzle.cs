@@ -23,6 +23,8 @@ public class ExtinguisherNozzle : ExtinguisherElement, IClickable
 
         animator.SetTrigger("Action");
 
+        AudioManager.Instance.PlayNozzle();
+
         yield return new WaitForSeconds(actionAnimation.length);
 
         animator.enabled = false;

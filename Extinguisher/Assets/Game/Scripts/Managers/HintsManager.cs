@@ -28,13 +28,13 @@ public class HintsManager : MonoBehaviour
         }
     }
 
-	public string GetHintSuccess()
+	public string GetHintGameComplete()
 	{
-		return hints.hintSuccess;
+		return hints.hintGameComplete;
 	}
 
-    public string GetHintNoPowder()
+    public string GetHintGameOver()
     {
-        return hints.hintNoPowder;
+        return hints.hintGameOver;
     }
 }

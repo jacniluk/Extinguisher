@@ -11,7 +11,7 @@ public class Hints : ScriptableObject
     [TextArea(2, 4)]
     [SerializeField] public string hintReady;
     [TextArea(2, 4)]
-    [SerializeField] public string hintSuccess;
+    [SerializeField] public string hintGameComplete;
     [TextArea(2, 4)]
-    [SerializeField] public string hintNoPowder;
+    [SerializeField] public string hintGameOver;
 }

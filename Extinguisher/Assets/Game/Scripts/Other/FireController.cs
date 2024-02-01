@@ -21,6 +21,11 @@ public class FireController : MonoBehaviour
         currentFirePower = firePower;
     }
 
+    private void Start()
+    {
+        AudioManager.Instance.StartFire();
+    }
+
     private void Update()
     {
         UpdateFire();
@@ -33,9 +38,7 @@ public class FireController : MonoBehaviour
             currentFirePower -= Time.deltaTime;
             if (currentFirePower < 0.0f)
             {
-                GameManager.Instance.SetGameCompleted();
-
-                HudManager.Instance.SetHint(HintsManager.Instance.GetHintSuccess());
+                GameManager.Instance.GameComplete();
 
                 Destroy(gameObject);
             }
@@ -56,8 +59,12 @@ public class FireController : MonoBehaviour
 
     private void SetRateOverTime()
     {
+        float power01 = Utilities.CalculateProgress01(currentFirePower, 0.0f, firePower);
+
         ParticleSystem.EmissionModule emissionModule = fireEffect.emission;
-        emissionModule.rateOverTime = Utilities.Evaluate(currentFirePower, 0.0f, firePower, 0.0f, startRateOverTime);
+        emissionModule.rateOverTime = Utilities.Evaluate(power01, 0.0f, startRateOverTime);
+
+        AudioManager.Instance.SetVolumeFire(power01);
     }
 
     public void StartExtinguish()

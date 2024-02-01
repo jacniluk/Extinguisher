@@ -25,6 +25,7 @@ public class ExtinguisherPin : ExtinguisherElement, IClickable
         transform.SetParent(null);
         animator.enabled = false;
         rb.useGravity = true;
+        rb.AddForce(Vector3.down * 1000.0f);
 
         extinguisherController.Action();
     }

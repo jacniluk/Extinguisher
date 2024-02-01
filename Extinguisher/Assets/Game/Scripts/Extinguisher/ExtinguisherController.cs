@@ -131,15 +131,6 @@ public class ExtinguisherController : MonoBehaviour
         FinishExtinguish();
     }
 
-    private void FinishExtinguish()
-    {
-        extinguishingPowderController.StopExtinguish();
-
-        extinguishCoroutine = null;
-
-        AudioManager.Instance.StopExtinguish();
-    }
-
     public void StopExtinguish()
     {
         if (extinguishCoroutine != null)
@@ -148,6 +139,15 @@ public class ExtinguisherController : MonoBehaviour
 
             FinishExtinguish();
         }
+    }
+
+    private void FinishExtinguish()
+    {
+        extinguishingPowderController.StopExtinguish();
+
+        extinguishCoroutine = null;
+
+        AudioManager.Instance.StopExtinguish();
     }
 
     public void SetHeight(float height01)

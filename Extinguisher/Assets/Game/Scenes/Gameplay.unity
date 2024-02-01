@@ -293,8 +293,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionTrigger: {fileID: 143276785}
-  extinguisherController: {fileID: 223501518}
   animator: {fileID: 1068191564}
+  extinguisherController: {fileID: 223501518}
 --- !u!135 &143276785
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -377,7 +377,7 @@ Transform:
   m_GameObject: {fileID: 196305577}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.025619, y: 0, z: 0.02876}
+  m_LocalPosition: {x: 0.025462, y: 0, z: 0.028435}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -437,17 +437,17 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 6
       value: 3
-      inSlope: -2.5
-      outSlope: -2.5
+      inSlope: -1.5
+      outSlope: -1.5
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 7
-      value: 0.5
-      inSlope: -2.5
-      outSlope: -2.5
+      value: 1.5
+      inSlope: -1.5
+      outSlope: -1.5
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -645,9 +645,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionTrigger: {fileID: 343433441}
+  animator: {fileID: 343433450}
   extinguisherController: {fileID: 223501518}
   rb: {fileID: 343433447}
-  animator: {fileID: 343433450}
   actionAnimation: {fileID: 7400000, guid: 46da288c4bc80d34ca32536ffc4cafa5, type: 2}
 --- !u!114 &343433440
 MonoBehaviour:
@@ -662,8 +662,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionTrigger: {fileID: 343433442}
-  extinguisherController: {fileID: 223501518}
   animator: {fileID: 343433443}
+  extinguisherController: {fileID: 223501518}
   actionAnimation: {fileID: 7400000, guid: 0a8dadb13768b8540917e2b2436aca65, type: 2}
   hoseEnd: {fileID: 196305578}
   extinguishingPowderSocket: {fileID: 446069561}

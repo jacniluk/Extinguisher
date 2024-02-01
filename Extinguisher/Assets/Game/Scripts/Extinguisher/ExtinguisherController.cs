@@ -40,8 +40,17 @@ public class ExtinguisherController : MonoBehaviour
 
     private void Update()
     {
-        UpdateHose();
         UpdateExtinguishingPowderPosition();
+    }
+
+    private void LateUpdate()
+    {
+        UpdateHose();
+    }
+
+    private void UpdateExtinguishingPowderPosition()
+    {
+        extinguishingPowderController.UpdatePosition(extinguisherNozzle.ExtinguishingPowderSocket);
     }
 
     private void UpdateHose()
@@ -63,11 +72,6 @@ public class ExtinguisherController : MonoBehaviour
             hoseLineRenderer.SetPosition(i, position);
         }
         hoseLineRenderer.SetPosition(hosePoints - 1, endPoint);
-    }
-
-    private void UpdateExtinguishingPowderPosition()
-    {
-        extinguishingPowderController.UpdatePosition(extinguisherNozzle.ExtinguishingPowderSocket);
     }
 
     private void SetCurrentState(ExtinguisherState _currentState)

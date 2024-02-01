@@ -25,7 +25,7 @@ public class InteractionManager : MonoBehaviour
             RaycastHit[] raycastHits = Physics.RaycastAll(ray);
             for (int i = 0; i < raycastHits.Length; i++)
             {
-                if (Utilities.CompareLayers(raycastHits[i].collider.gameObject.layer, clickableLayerMask))
+                if (raycastHits[i].collider.isTrigger && Utilities.CompareLayers(raycastHits[i].collider.gameObject.layer, clickableLayerMask))
                 {
                     clickedObject = raycastHits[i].collider.GetComponent<IClickable>();
                     clickedObject.OnClickDown();

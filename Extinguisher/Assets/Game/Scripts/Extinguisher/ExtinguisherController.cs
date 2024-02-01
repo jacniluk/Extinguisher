@@ -29,9 +29,13 @@ public class ExtinguisherController : MonoBehaviour
     private void Awake()
     {
         hoseLineRenderer.positionCount = hosePoints;
-        SetCurrentState(ExtinguisherState.Locked);
         currentDischargeTime = dischargeTime;
         minHeight = transform.position.y;
+    }
+
+    private void Start()
+    {
+        SetCurrentState(ExtinguisherState.Locked);
     }
 
     private void Update()

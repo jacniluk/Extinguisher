@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hintLocked: There is a fire! Click on the gray pin to pull it out.
   hintUnlocked: Ok, now click on the nozzle to straighten it.
-  hintReady: Press and hold the handle to release the powder. Control the height
-    of the extinguisher with the slider and keep an eye on the powder supply.
+  hintReady: Press and hold the lever to release the powder. Control the height of
+    the extinguisher with the slider and keep an eye on the powder level.
   hintGameComplete: Nice! Fire extinguished :)
   hintGameOver: You're out of powder! Try again.

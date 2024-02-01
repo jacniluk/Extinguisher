@@ -17,7 +17,7 @@ public class ExtinguisherPin : ExtinguisherElement, IClickable
     {
         interactionTrigger.enabled = false;
 
-        animator.SetTrigger("Action");
+        animator.SetBool("On", true);
 
         AudioManager.Instance.PlayPin();
 

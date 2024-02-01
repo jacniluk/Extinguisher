@@ -7,14 +7,14 @@ public class ExtinguisherLever : ExtinguisherElement, IClickable
 
     public void OnClickDown() // IClickable
     {
-        animator.SetTrigger("On");
+        animator.SetBool("On", true);
 
         extinguisherController.StartExtinguish();
     }
 
     public void OnClickUp() // IClickable
     {
-        animator.SetTrigger("Off");
+        animator.SetBool("On", false);
 
         extinguisherController.StopExtinguish();
     }

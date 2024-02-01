@@ -9,8 +9,8 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Action
-    m_EventTreshold: 0
+    m_ConditionEvent: On
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1001541931490573035}
   m_Solo: 0
@@ -61,8 +61,8 @@ AnimatorController:
   m_Name: Nozzle
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Action
-    m_Type: 9
+  - m_Name: On
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0

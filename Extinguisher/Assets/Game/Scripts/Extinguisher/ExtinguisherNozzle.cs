@@ -21,7 +21,7 @@ public class ExtinguisherNozzle : ExtinguisherElement, IClickable
     {
         interactionTrigger.enabled = false;
 
-        animator.SetTrigger("Action");
+        animator.SetBool("On", true);
 
         AudioManager.Instance.PlayNozzle();
 

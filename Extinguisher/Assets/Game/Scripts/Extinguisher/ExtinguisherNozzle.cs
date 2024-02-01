@@ -4,7 +4,6 @@ using UnityEngine;
 public class ExtinguisherNozzle : ExtinguisherElement, IClickable
 {
     [Header("References")]
-    [SerializeField] private Animator animator;
     [SerializeField] private AnimationClip actionAnimation;
     [SerializeField] private Transform hoseEnd;
     [SerializeField] private Transform extinguishingPowderSocket;

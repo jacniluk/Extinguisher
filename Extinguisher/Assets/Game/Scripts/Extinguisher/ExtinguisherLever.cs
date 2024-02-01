@@ -1,10 +1,5 @@
-using UnityEngine;
-
 public class ExtinguisherLever : ExtinguisherElement, IClickable
 {
-    [Header("References")]
-    [SerializeField] private Animator animator;
-
     public void OnClickDown() // IClickable
     {
         animator.SetBool("On", true);

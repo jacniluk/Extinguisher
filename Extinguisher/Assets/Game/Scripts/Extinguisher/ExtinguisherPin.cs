@@ -5,7 +5,6 @@ public class ExtinguisherPin : ExtinguisherElement, IClickable
 {
     [Header("References")]
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private Animator animator;
     [SerializeField] private AnimationClip actionAnimation;
 
     public void OnClickDown() // IClickable

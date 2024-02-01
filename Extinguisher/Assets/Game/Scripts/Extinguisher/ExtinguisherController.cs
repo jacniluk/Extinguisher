@@ -90,6 +90,8 @@ public class ExtinguisherController : MonoBehaviour
             SetCurrentState(ExtinguisherState.Ready);
 
             extinguisherLever.InteractionTrigger.enabled = true;
+
+            HudManager.Instance.ShowExtinguisherHeightSlider();
         }
     }
 

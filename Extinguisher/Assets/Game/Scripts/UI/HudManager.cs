@@ -5,6 +5,7 @@ public class HudManager : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Text hintText;
+    [SerializeField] private GameObject extinguisherHeightSlider;
     [SerializeField] private Image powderBarFill;
     [SerializeField] private Image fireBarFill;
     [SerializeField] private ExtinguisherController extinguisherController;
@@ -31,7 +32,12 @@ public class HudManager : MonoBehaviour
     public void SetHint(string hint)
     {
         hintText.text = hint;
-    }    
+    }
+
+    public void ShowExtinguisherHeightSlider()
+    {
+        extinguisherHeightSlider.SetActive(true);
+    }
 
     public void SetExtinguisherHeight01(float height01)
     {

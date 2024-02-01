@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c55ad00e7c27324418a39df4cb13b8f9, type: 3}
+  m_Name: Hints
+  m_EditorClassIdentifier: 
+  hintLocked: There is a fire! Click on the gray pin to pull it out.
+  hintUnlocked: Ok, now click on the nozzle to straighten it.
+  hintReady: Press and hold the handle to release the powder. Control the height
+    of the extinguisher with the slider and keep an eye on the powder supply.
+  hintSuccess: Nice! Fire extinguished :)
+  hintNoPowder: You're out of powder! Try again.

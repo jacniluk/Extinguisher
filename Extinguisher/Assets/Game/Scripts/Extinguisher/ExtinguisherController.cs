@@ -70,7 +70,7 @@ public class ExtinguisherController : MonoBehaviour
     {
         currentState = _currentState;
 
-        // 2do tip
+        HudManager.Instance.SetHint(HintsManager.Instance.GetHintExtinguisherState(currentState));
     }
 
     public void Action()
@@ -113,6 +113,11 @@ public class ExtinguisherController : MonoBehaviour
             {
                 currentDischargeTime = 0.0f;
             }
+        }
+
+        if (GameManager.Instance.GameCompleted == false)
+        {
+            HudManager.Instance.SetHint(HintsManager.Instance.GetHintNoPowder());
         }
 
         FinishExtinguish();

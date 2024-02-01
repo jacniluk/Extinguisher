@@ -6,11 +6,20 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    private bool gameCompleted;
+
+    public bool GameCompleted => gameCompleted;
+
 	private void Awake()
     {
         Instance = this;
 
         Application.targetFrameRate = 60;
+    }
+
+    public void SetGameCompleted()
+    {
+        gameCompleted = true;
     }
 
     public void RestartGame()

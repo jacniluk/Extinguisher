@@ -33,6 +33,10 @@ public class FireController : MonoBehaviour
             currentFirePower -= Time.deltaTime;
             if (currentFirePower < 0.0f)
             {
+                GameManager.Instance.SetGameCompleted();
+
+                HudManager.Instance.SetHint(HintsManager.Instance.GetHintSuccess());
+
                 Destroy(gameObject);
             }
 
